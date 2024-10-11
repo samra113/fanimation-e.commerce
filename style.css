@@ -1,0 +1,956 @@
+@import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
+
+
+*{
+  font-family: 'Vidaloka', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 144px;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: #000000;
+  border-radius: 70px;
+}
+
+section{
+  padding: 40px 7%;
+}
+
+.heading{
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  padding: 10px 0;
+  font-size: 40px;
+}
+
+.heading span{
+  color: #4e3775;
+  text-transform: uppercase;
+}
+
+.btn{
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #ffecec;
+  border-radius: 8px;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+  background: #000000;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background: #4e3775;
+}
+
+/* ------------------------HEADER CSS START--------------------------------------------- */
+
+.header{
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: #d7dcf1;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 2%;
+  position: relative;
+}
+.header .logo img{
+  height: 45px;
+}
+
+.header .logo{
+  font-size: 30px;
+  font-weight: bolder;
+  color:  #130303;
+}
+
+.header .navbar a{
+  font-size: 27px;
+  color:  #130303;
+  margin-left:2px;
+  padding: 8px;
+}
+
+.header .navbar a:hover{
+  color: #000000;
+}
+
+.header .icons div{
+  font-size: 20px;
+  margin-left: 40px;
+  color:  #130303;
+  cursor: pointer;
+}
+
+.header .icons div:hover{
+  color: #000000;
+}
+
+#menu-btn{
+  display: none;
+}
+/*------------------------- HEADER CSS END--------------------------------------------- */
+
+
+
+/*------------------------- CART CSS START--------------------------------------------- */
+
+.cart-items-container{
+  position: fixed;
+  top: 0; right: -105%;
+  width: 500px;
+  background: #ffecec;
+  display: flex;
+  flex-flow: column;
+  gap: 32px;
+  justify-content: center;
+  height: 100%;
+  z-index: 1200;
+  padding: 32px;
+  text-align: center;
+}
+
+.cart-items-container.active{
+  right: 0;
+  box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+}
+
+.cart-items-container #close-form{
+  position: absolute;
+  top: 2px;
+  right: 40px;
+  font-size: 38px;
+  cursor: pointer;
+  color:  #130303;
+}
+
+.cart-items-container #close-form:hover{
+  transform: rotate(90deg);
+  color: #000000;
+}
+
+.cart-items-container .title{
+  font-size: 35px;
+  color: #4e3775;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.cart-items-container .cart-item{
+  position: relative;
+  margin: 1px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-items-container .cart-item .fa-times{
+  position: absolute;
+  top: 10px; right: 10px;
+  font-size: 30px;
+  color:  #130303;
+  cursor: pointer;
+}
+
+.cart-items-container .cart-item .fa-times:hover{
+  color: #000000;
+}
+
+.cart-items-container .cart-item img{
+  height: 102px;
+}
+
+.cart-items-container .cart-item .content h3{
+  font-size: 28px;
+  color:  #130303;
+  padding-bottom: 8px;
+}
+
+.cart-items-container .cart-item .content .price{
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+}
+
+/*------------------------- CART CSS END--------------------------------------------- */
+
+
+/*------------------------- HOME CSS START--------------------------------------------- */
+
+
+@keyframes fadeIn{
+  0%{
+    transform: translateY(-4rem) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.home{
+  padding: 0;
+}
+
+.home .slide{
+  min-height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .slide::before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background: rgba(49, 47, 47, 0.459);
+  z-index: -1;
+}
+
+.home .slide .content{
+  text-align: center;
+  width: 1120px;
+  display: none;
+}
+
+.home .slide .content h3{
+  font-size: 60px;
+  text-transform: uppercase;
+  color: #ffecec;
+  line-height: 1.2;
+  padding: 32px 0;
+  animation: fadeIn 0.4s cubic-bezier(.54, 1.3,.63,1.34) .2s backwards;
+}
+
+.home .slide .content .btn{
+  animation: fadeIn 0.4s cubic-bezier(.54, 1.3,.63,1.34) .4s backwards;
+}
+
+.home .swiper-slide-active .content{
+  display: inline-block;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+  height: 64px;
+  width: 64px;
+  line-height: 64px;
+  margin-left: 24px;
+  background: #ffecec;
+  color: #130303;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+  background: #000000;
+  color: #ffecec;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+  font-size: 24px;
+}
+
+/*------------------------- HOME CSS END--------------------------------------------- */
+
+
+/*------------------------- ABOUT CSS START--------------------------------------------- */
+
+.about{
+  background-color: rgb(155, 146, 146);
+}
+.about .row{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.about .row .image{
+  flex: 2 2 200px;
+}
+
+.about .row .image img{
+  width: 40vw;
+  height: 80vh
+}
+
+.about .row .content{
+  flex: 2 2 200px;
+}
+
+.about .row .content h3{
+  color:  #130303;
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.about .row .content h3 span{
+  color: #4e3775;
+}
+
+.about .row .content p{
+  font-size: 22px;
+  color: #444;
+  padding: 10px 0;
+  line-height: 2;
+}
+
+/*------------------------- ABOUT CSS END--------------------------------------------- */
+
+
+/*-------------------------PRODUCT CSS START--------------------------------------------- */
+
+
+.product{
+  background: #d7dcf1;
+}
+
+.product .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+  gap: 30px;
+}
+
+.product .box-container .box{
+  background: #d7dcf1;
+  border-radius: 8px;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.product .box-container .box .image{
+  height: 320px;
+  width: 100%;
+  padding: 17.6px;
+}
+
+.product .box-container .box .image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.product .box-container .box:hover .image img{
+  transform: scale(1.1);
+}
+
+.product .box-container .box .content{
+  padding: 32px;
+  padding-top: 0;
+}
+
+.product .box-container .box .content h3{
+  color:  #130303;
+  font-size: 25px;
+}
+
+.product .box-container .box .content .stars{
+  padding: 10px 0;
+}
+
+.product .box-container .box .content .stars i{
+  font-size: 15px;
+  color: #4e3775;
+}
+
+.product .box-container .box .content .price{
+  font-size: 27px;
+  font-weight: bolder;
+  color: #4e3775;
+  margin-right: 10px;
+}
+
+/* Style the dropdown button */
+.dropdown-btn {
+  background-color: #8c9fea;
+  color: rgb(5, 5, 5);
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  }
+
+/* Style the links inside the dropdown */
+  .dropdown-content a {
+  color: black;
+  padding: 16px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.product-card {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.products-preview{
+   position: fixed;
+   top:0; left:0;
+   min-height: 100vh;
+   width: 100%;
+   background: rgba(0,0,0,.8);
+   display: none;
+   align-items: center;
+   justify-content: center;
+}
+
+.products-preview .preview{
+   display: none;
+   padding:2rem;
+   text-align: center;
+   background: #fff;
+   position: relative;
+   margin:2rem;
+   width: 40rem;
+}
+
+.products-preview .preview.active{
+   display: inline-block;
+}
+
+.products-preview .preview img{
+   height: 25rem;
+}
+
+.products-preview .preview .fa-times{
+   position: absolute;
+   top:1rem; right:1.5rem;
+   cursor: pointer;
+   color:#444;
+   font-size: 4rem;
+}
+
+.products-preview .preview .fa-times:hover{
+   transform: rotate(90deg);
+}
+
+.products-preview .preview h3{
+   color:#444;
+   padding:.5rem 0;
+   font-size: 2.5rem;
+}
+
+.products-preview .preview .stars{
+   padding:1rem 0;
+   font-size: 1.7rem;
+}
+
+.products-preview .preview .stars i{
+   color: #4e3775;
+}
+
+.products-preview .preview .stars span{
+   color:#999;
+}
+
+.products-preview .preview p{
+   line-height: 1.5;
+   padding:1rem 0;
+   font-size: 1.6rem;
+   color:#777;
+}
+
+.products-preview .preview .price{
+   padding:1rem 0;
+   font-size: 2.5rem;
+   color:#4e3775;
+}
+
+.products-preview .preview .buttons{
+   display: flex;
+   gap:1.5rem;
+   flex-wrap: wrap;
+   margin-top: 1rem;
+}
+
+.products-preview .preview .buttons a{
+   flex:1 1 16rem;
+   padding:1rem;
+   font-size: 1.8rem;
+   color:#4e3775;
+   border:.1rem solid #444;
+   border-radius: 8px;
+}
+
+.products-preview .preview .buttons a.cart{
+  background: #000000;
+   color:#fff;
+}
+
+.products-preview .preview .buttons a.cart:hover{
+   background: #4e3775;
+}
+
+.products-preview .preview .buttons a.buy:hover{
+   background: #444;
+   color:#fff;
+}
+
+@media (max-width:768px){
+
+  .products-preview .preview img{
+     height: 25rem;
+  }
+
+}
+/*------------------------- PRODUCT CSS END--------------------------------------------- */
+/*-------------------------PROMOTION-----------------------------------------------------*/
+.promotion{
+ 
+  background-size: cover !important;
+  background-position: center !important;
+  background-color: rgb(155, 146, 146);
+}
+
+.promotion .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+}
+
+.promotion .box-container .box{
+  flex: 1 1 880px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.promotion .box-container .box img{
+  width: 50vw;
+  height: 60vh;
+}
+
+.promotion .box-container .box .content{
+  text-align: center;
+}
+
+.promotion .box-container .box .content h3{
+  font-size: 40px;
+  color: var(--black);
+}
+
+.promotion .box-container .box .content p{
+  font-size: 20px;
+  color: #444;
+  padding: 16px 0;
+  line-height: 1;
+}
+
+
+/*------------------------- GALLERY CSS START--------------------------------------------- */
+.gallery{
+  background-color:  #d7dcf1 ;
+}
+.gallery .gallery-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+  gap: 18px;
+}
+
+.gallery .gallery-container .box{
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery .gallery-container .box img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery .gallery-container .box:hover img{
+  transform: scale(1.1);
+}
+
+.gallery .gallery-container .box .icons{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.gallery .gallery-container .box .icons i{
+  font-size: 50px;
+  color: #ffecec;
+}
+
+.gallery .gallery-container .box:hover .icons{
+  display: flex;
+}
+
+
+/*------------------------- GALLERY CSS END--------------------------------------------- */
+
+
+/*------------------------- SERVICES CSS START--------------------------------------------- */
+
+.services{
+  background-color: rgb(155, 146, 146);
+}
+.services .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+  gap: 32px;
+}
+
+.services .box-container .box{
+  background: #ffecec;
+  border-radius: 8px;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.services .box-container .box .image{
+  height: 320px;
+  width: 100%;
+  padding: 17px;
+  overflow: hidden;
+  position: relative;
+}
+
+.services .box-container .box .image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.services .box-container .box:hover .image img{
+  transform: scale(1.1);
+}
+
+.services .box-container .box .content{
+  padding: 32px;
+  padding-top: 0;
+}
+
+.services .box-container .box .content h3{
+  color:  #130303;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.services .box-container .box .content .share i{
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  background: none;
+  border-radius: 8px;
+  font-size: 20px;
+  color: #000000;
+  border: 2px solid #000000;
+  margin: 2px;
+}
+
+.services .box-container .box .content .share i:hover{
+  color: var(--white);
+  border: 2px solid #4e3775;
+  background: #4e3775;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+  transition: .4s linear;
+  cursor: pointer;
+}
+
+/*------------------------- SERVICES CSS END--------------------------------------------- */
+
+
+
+/*------------------------- REVIEW CSS START--------------------------------------------- */
+
+.review{
+  background: #d7dcf1;
+}
+
+.review .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+  gap: 24px;
+}
+
+.review .box-container .box{
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow:2px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 48px 32px;
+  background: #ffecec;
+}
+
+.review .box-container .box .user{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review .box-container .box h3{
+  padding: 16px 0;
+  font-size: 20px;
+  color: #000000;
+}
+
+.review .box-container .box .stars i{
+  font-size: 24px;
+  color: #4e3775;
+}
+
+.review .box-container .box p{
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+  padding-top: 16px;
+}
+
+/*------------------------- REVIEW CSS END--------------------------------------------- */
+
+
+/*------------------------- CONTACT US CSS START--------------------------------------------- */
+
+.contact .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.contact .row .map{
+  flex:1 1 250px; 
+  width: 100%;
+  object-fit: cover;
+}
+.contact .row form{
+  flex: 1 1 250px;
+  padding: 40px;
+}
+.contact .row form .inputBox{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contact .row form .inputBox input,
+.contact .row form textarea{
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 15px;
+  color: #4e3775;
+  text-transform: capitalize;
+  background:#d7dcf1;
+  border-radius: 8px;
+  width: 49%;
+}
+
+.contact .row form .inputBox input:focus,
+.contact .row form textarea:focus{
+  border: 1.6px solid #000000;
+}
+
+.contact .row form textarea{
+  width: 100%;
+  resize: none;
+  height: 44px;
+}
+
+/*------------------------- CONTACT US CSS END--------------------------------------------- */
+
+
+/*------------------------- FOOTER CSS START--------------------------------------------- */
+
+.footer{
+  background: #d7dcf1;
+  text-align: center;
+}
+
+.footer .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+  gap: 32px;
+}
+
+.footer .box-container .box h3{
+  text-transform: capitalize;
+  font-size: 25px;
+  color: #4e3775;
+  padding: 16px 0;
+}
+
+.footer .box-container .box p{
+  font-size: 15px;
+  line-height: 2;
+  color: #444;
+  padding: 8px 0;
+}
+
+.footer .box-container .box .share{
+  margin-top: 16px;
+}
+
+.footer .box-container .box .share a{
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 10%;
+  font-size: 20px;
+  background: #000000;
+  color: #ffecec;
+  margin-right: 4px;
+}
+
+.footer .box-container .box .share a:hover{
+  background: #4e3775;
+}
+
+.footer .box-container .box .link{
+  font-size: 15px;
+  line-height: 2;
+  color: #000000;
+  padding: 8px 0;
+  display: block;
+}
+
+.footer .box-container .box .link:hover{
+  color: #4e3775;
+  text-decoration: underline;
+}
+
+.footer .credit{
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 30px;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #000000;
+  border-top: 2px solid #4e3775;
+}
+
+.footer .credit span{
+  color: #4e3775;
+}
+
+/*------------------------- FOOTER CSS END--------------------------------------------- */
+
+
+
+
+
+/*------------------------- MEDIA QUERIES START--------------------------------------------- */
+
+
+@media (max-width: 991px){
+
+  html{
+    font-size: 50%;
+  }
+
+  .header{
+    padding: 32px;
+  }
+
+  section{
+    padding: 30px;
+  }
+
+}
+
+@media (max-width: 800px){
+  #menu-btn{
+    display: inline-block;
+  }
+
+  .fa-times{
+    transform: rotate(180deg);
+  }
+
+  .header .navbar{
+    position: absolute;
+    top: 99%;
+    left: 0; right: 0;
+    background: #ffecec;
+    border-top: 2px solid #4e3775;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .header .navbar a{
+    display: block;
+    margin: 32px;
+  }
+
+  .home .slide .content{
+    width: 600px;
+  }
+
+  .home .slide .content h3{
+    font-size: 64px;
+  }
+
+}
+
+@media (max-width: 400px){
+
+  html{
+    font-size: 50%;
+  }
+
+  .home .slide .content h3{
+    font-size: 25px;
+  }
+
+}
+
+/*------------------------- MEDIA QUERIES END--------------------------------------------- */
